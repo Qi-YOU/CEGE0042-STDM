@@ -172,3 +172,7 @@ cython_debug/
 
 # ignore csv files in data directory
 data/*
+
+# ignore google-drive series file records
+.tmp.drivedownload
+.tmp.driveupload
