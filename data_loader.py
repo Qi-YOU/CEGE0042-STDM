@@ -8,51 +8,51 @@ def detect_environment():
     Automatically detect the current environment (colab, kaggle, or sys).
     
     Returns:
-        str: The detected environment ('colab', 'kaggle', or 'sys').
+        str: The detected environment (`colab`, `kaggle`, or `sys`).
     """
 
-    if 'COLAB_GPU' in os.environ:
-        return 'colab'
-    elif 'KAGGLE_KERNEL_RUN_TYPE' in os.environ:
-        return 'kaggle'
+    if "COLAB_GPU" in os.environ:
+        return "colab"
+    elif "KAGGLE_KERNEL_RUN_TYPE" in os.environ:
+        return "kaggle"
     else:
-        return 'sys'  # Default to local system
+        return "sys"  # Default to local system
 
 
 def load_data(file_type):
     """
-    Load the specified CSV file ('train', 'test' or 'data')
+    Load the specified CSV file (`train`, `test` or `data`)
     based on the detected environment.
     
     Args:
-        file_type (str): 'train', 'test' or 'data'.
+        file_type (str): `train`, `test` or `data`.
     
     Returns:
         pandas.DataFrame: Loaded data as a DataFrame.
     """
 
-    if file_type not in ['train', 'test', 'data']:
-        raise ValueError("Invalid file_type. Use 'train', 'test' or 'data'.")
+    if file_type not in ["train", "test", "data"]:
+        raise ValueError("Invalid file_type. Use "train", "test" or "data".")
 
     # Detect the environment
     environment = detect_environment()
     
     # Define file paths for different environments
     file_paths = {
-        'colab': {
-            'data': '/content/data/data.csv',
-            'train': '/content/data/train.csv',
-            'test': '/content/data/test.csv'
+        "colab": {
+            "data": "/content/data/data.csv",
+            "train": "/content/data/train.csv",
+            "test": "/content/data/test.csv"
         },
-        'kaggle': {
-            'data': '/kaggle/input/data/data.csv',
-            'train': '/kaggle/input/data/train.csv',
-            'test': '/kaggle/input/data/test.csv'
+        "kaggle": {
+            "data": "/kaggle/input/data/data.csv",
+            "train": "/kaggle/input/data/train.csv",
+            "test": "/kaggle/input/data/test.csv"
         },
-        'sys': {
-            'data': os.path.join(os.getcwd(), 'data', 'data.csv'),
-            'train': os.path.join(os.getcwd(), 'data', 'train.csv'),
-            'test': os.path.join(os.getcwd(), 'data', 'test.csv')
+        "sys": {
+            "data": os.path.join(os.getcwd(), "data", "data.csv"),
+            "train": os.path.join(os.getcwd(), "data", "train.csv"),
+            "test": os.path.join(os.getcwd(), "data", "test.csv")
         }
     }
 
@@ -75,8 +75,8 @@ def save_data(X, y, filename, folder="data"):
     Parameters:
     - X (pd.DataFrame): Feature dataset.
     - y (pd.Series or pd.DataFrame): Target labels.
-    - filename (str): Name of the output CSV file (e.g., 'train.csv' or 'test.csv').
-    - folder (str): Folder where the file will be saved. Default is 'data'.
+    - filename (str): Name of the output CSV file (e.g., `train.csv` or `test.csv`).
+    - folder (str): Folder where the file will be saved. Default is `data`.
     """
     # Ensure the folder exists
     os.makedirs(folder, exist_ok=True)
