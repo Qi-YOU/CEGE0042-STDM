@@ -23,4 +23,18 @@ The goal of the project is to analyze and model the taxi trip duration using spa
 
 3. **Spatio-Temporal Patterns**:
    - Combining spatial and temporal factors to uncover complex dependencies.  
-   - Visualizing pickup-dropoff pairs and their impact on trip duration.  
+   - Visualizing pickup-dropoff pairs and their impact on trip duration.
+
+### Layout
+
+1. **Introduction**
+2. **Data Exploration & Preprocessing**
+   - Dataset Overview
+   - Data Cleaning & Processing
+3. **Exploratory Spatio-Temporal Analysis & Visualization**
+   - Temporal Analysis
+   - Spatial Analysis
+4. **Spatio-Temporal Autocorrelation Analysis**
+5. **Machine Learning**
+6. **Results**
+7. **Conclusion**
