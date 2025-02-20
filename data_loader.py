@@ -32,7 +32,7 @@ def load_data(file_type):
     """
 
     if file_type not in ["train", "test", "data"]:
-        raise ValueError("Invalid file_type. Use "train", "test" or "data".")
+        raise ValueError("Invalid file_type. Use `train`, `test` or `data`.")
 
     # Detect the environment
     environment = detect_environment()
